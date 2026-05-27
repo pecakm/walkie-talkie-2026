@@ -7,7 +7,7 @@
       "join": "Join"
     },
     "roomView": {
-      "leave": "Leave",
+      "leave": "Leave Room",
       "holdToTalk": "Hold to Talk",
       "speaking": "Speaking"
     }

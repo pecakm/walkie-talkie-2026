@@ -57,6 +57,7 @@ export default function RoomView({ onLeave }: RoomViewProps) {
         onMouseLeave={stopTalking}
         onTouchStart={startTalking}
         onTouchEnd={stopTalking}
+        data-speaking={speaking}
         disabled={isSomeoneSpeaking}
       >
         {speaking ? t('speaking') : t('holdToTalk')}

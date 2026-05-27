@@ -45,8 +45,13 @@ h1, h2, h3, h4, h5, h6 {
 /* RESET CSS END */
 
 body {
-  background-color: #333;
-  color: #fefefe;
+  min-height: 100dvh;
+  color: #e2e8f0;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(34, 211, 238, 0.2), transparent 32%),
+    radial-gradient(circle at 86% 18%, rgba(99, 102, 241, 0.2), transparent 36%),
+    radial-gradient(circle at 50% 88%, rgba(56, 189, 248, 0.12), transparent 40%),
+    #020617;
 }
 
 button {
