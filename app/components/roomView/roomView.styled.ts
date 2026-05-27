@@ -68,8 +68,8 @@ export const PushToTalkButton = styled.button`
   }
 
   &:not(:disabled):active {
-    transform: translateY(1px) scale(0.985); */
-    /* transition-duration: 80ms;
+    transform: translateY(1px) scale(0.985);
+    transition-duration: 80ms;
   }
 
   &:not(:disabled):hover::after {
