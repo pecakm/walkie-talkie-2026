@@ -38,10 +38,19 @@ export const PushToTalkButton = styled.button`
   font-weight: 700;
   letter-spacing: 0.01em;
   box-shadow: 0 16px 36px rgba(14, 165, 233, 0.42);
-  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+  transition: transform 120ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 180ms ease, filter 180ms ease;
   user-select: none;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
+
+  @keyframes onAirRing {
+    0% {
+      box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.34), 0 20px 44px rgba(14, 165, 233, 0.58);
+    }
+    100% {
+      box-shadow: 0 0 0 16px rgba(56, 189, 248, 0), 0 20px 44px rgba(14, 165, 233, 0.58);
+    }
+  }
 
   &::after {
     content: '';
@@ -59,7 +68,8 @@ export const PushToTalkButton = styled.button`
   }
 
   &:not(:disabled):active {
-    transform: translateY(1px) scale(0.99);
+    transform: translateY(1px) scale(0.985); */
+    /* transition-duration: 80ms;
   }
 
   &:not(:disabled):hover::after {
@@ -69,6 +79,7 @@ export const PushToTalkButton = styled.button`
   &[data-speaking='true']:not(:disabled) {
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35), 0 20px 44px rgba(14, 165, 233, 0.58);
     filter: brightness(1.06);
+    animation: onAirRing 1.15s ease-out infinite;
   }
 
   &:disabled {
@@ -76,5 +87,15 @@ export const PushToTalkButton = styled.button`
     color: #cbd5e1;
     box-shadow: none;
     cursor: not-allowed;
+    animation: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    transition: none;
+
+    &::after {
+      transition: none;
+    }
   }
 `;
