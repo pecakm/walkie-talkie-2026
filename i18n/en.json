@@ -1,5 +1,10 @@
 {
   "homePage": {
-    "join": "Join"
+    "initView": {
+      "join": "Join"
+    },
+    "roomView": {
+      "leave": "Leave"
+    }
   }
 }
