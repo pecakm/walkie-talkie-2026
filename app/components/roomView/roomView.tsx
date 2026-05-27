@@ -6,6 +6,7 @@ import { useLocalParticipant, useParticipants } from '@livekit/components-react'
 
 import { Button, ParticipantCount } from '@/components';
 
+import { isSomeoneUnmuted } from './roomView.utils';
 import { RoomViewProps } from './roomView.types';
 import { Container, Header, PushToTalkButton } from './roomView.styled';
 
@@ -14,6 +15,7 @@ export default function RoomView({ onLeave }: RoomViewProps) {
   const { localParticipant } = useLocalParticipant();
   const participants = useParticipants();
   const [speaking, setSpeaking] = useState(false);
+  const isSomeoneSpeaking = isSomeoneUnmuted(participants, localParticipant);
 
   function startTalking() {
     setSpeaking(true);
@@ -37,6 +39,7 @@ export default function RoomView({ onLeave }: RoomViewProps) {
         onMouseLeave={stopTalking}
         onTouchStart={startTalking}
         onTouchEnd={stopTalking}
+        disabled={isSomeoneSpeaking}
       >
         {speaking ? t('speaking') : t('holdToTalk')}
       </PushToTalkButton>
