@@ -12,7 +12,6 @@ export default function InitView({ onJoin }: InitViewProps) {
 
   return (
     <Container>
-      Init View
       <Button onClick={onJoin}>{t('join')}</Button>
     </Container>
   );

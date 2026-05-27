@@ -28,7 +28,7 @@ export default function HomePage() {
           serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL}
           connect={true}
           video={false}
-          audio={true}
+          audio={false}
         >
           <RoomAudioRenderer />
           <RoomView onLeave={leaveRoom} />
