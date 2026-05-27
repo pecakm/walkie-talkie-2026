@@ -7,6 +7,7 @@ import { ThemeProvider } from '@mui/material/styles';
 
 import { StyledComponentsRegistry } from '@/lib/styled-components';
 import { theme } from '@/lib/mui';
+import { Navbar } from '@/components';
 
 import './global.css';
 
@@ -35,6 +36,7 @@ export default async function RootLayout({
           <AppRouterCacheProvider>
             <ThemeProvider theme={theme}>
               <StyledComponentsRegistry>
+                <Navbar />
                 {children}
               </StyledComponentsRegistry>
             </ThemeProvider>

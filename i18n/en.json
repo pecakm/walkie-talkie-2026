@@ -1,4 +1,7 @@
 {
+  "navbar": {
+    "title": "🔊 WalkieTalkie 🔊"
+  },
   "participantCount": {
     "inRoom": "People in room:"
   },
