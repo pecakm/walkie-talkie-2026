@@ -4,4 +4,8 @@ export const Container = styled.div``;
 
 export const Header = styled.div``;
 
-export const PushToTalkButton = styled.button``;
+export const PushToTalkButton = styled.button`
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+`;
