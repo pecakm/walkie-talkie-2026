@@ -1,13 +1,12 @@
 import { NextResponse } from 'next/server';
 import { AccessToken } from 'livekit-server-sdk';
 
-const roomName = 'public-room';
+import { getLiveKitApiCredentials, RoomName } from '@/lib/livekit';
 
 export async function GET() {
-  const apiKey = process.env.LIVEKIT_API_KEY;
-  const apiSecret = process.env.LIVEKIT_API_SECRET;
+  const credentials = getLiveKitApiCredentials();
 
-  if (!apiKey || !apiSecret) {
+  if (!credentials) {
     return NextResponse.json(
       { error: 'Missing LiveKit API credentials' },
       { status: 500 }
@@ -17,8 +16,8 @@ export async function GET() {
   const identity = `guest-${crypto.randomUUID()}`;
 
   const token = new AccessToken(
-    apiKey,
-    apiSecret,
+    credentials.apiKey,
+    credentials.apiSecret,
     {
       identity,
       name: 'Guest',
@@ -27,7 +26,7 @@ export async function GET() {
   );
 
   token.addGrant({
-    room: roomName,
+    room: RoomName,
     roomJoin: true,
     canPublish: true,
     canSubscribe: true,

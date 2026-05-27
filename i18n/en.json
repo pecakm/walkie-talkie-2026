@@ -1,4 +1,7 @@
 {
+  "participantCount": {
+    "inRoom": "People in room:"
+  },
   "homePage": {
     "initView": {
       "join": "Join"
