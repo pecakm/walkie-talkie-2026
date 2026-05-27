@@ -3,9 +3,12 @@ import styled from 'styled-components';
 export const Container = styled.div`
   position: relative;
   display: grid;
+  grid-template-rows: auto 1fr;
   gap: 1.75rem;
-  align-content: center;
   width: min(42rem, 100%);
+  height: calc(100dvh - 5.5rem - clamp(2rem, 4.4vw, 4.4rem));
+  max-height: calc(100dvh - 5.5rem - clamp(2rem, 4.4vw, 4.4rem));
+  align-self: stretch;
   margin-inline: auto;
   padding: clamp(1.25rem, 2vw + 0.75rem, 2rem);
   border: 1px solid rgba(255, 255, 255, 0.24);
@@ -28,6 +31,7 @@ export const PushToTalkButton = styled.button`
   position: relative;
   overflow: hidden;
   width: min(22rem, 100%);
+  height: 100%;
   min-height: 8.5rem;
   margin-inline: auto;
   border: 0;

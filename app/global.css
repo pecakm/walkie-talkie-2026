@@ -46,6 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   min-height: 100dvh;
+  padding-top: 0.75rem;
   color: #e2e8f0;
   background:
     radial-gradient(circle at 12% 10%, rgba(34, 211, 238, 0.2), transparent 32%),

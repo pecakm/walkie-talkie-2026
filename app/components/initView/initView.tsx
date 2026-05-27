@@ -2,11 +2,19 @@
 
 import { useTranslations } from 'next-intl';
 
-import { Button, ParticipantCount } from '@/components';
 import { useParticipantCount } from '@/hooks';
 
 import { InitViewProps } from './initView.types';
-import { Container } from './initView.styled';
+import {
+  Container,
+  Content,
+  Description,
+  Eyebrow,
+  JoinButton,
+  Meta,
+  StyledParticipantCount,
+  Title
+} from './initView.styled';
 
 export default function InitView({ onJoin }: InitViewProps) {
   const t = useTranslations('homePage.initView');
@@ -14,8 +22,15 @@ export default function InitView({ onJoin }: InitViewProps) {
 
   return (
     <Container>
-      <ParticipantCount count={participantCount} />
-      <Button onClick={onJoin}>{t('join')}</Button>
+      <Content>
+        <Eyebrow>{t('eyebrow')}</Eyebrow>
+        <Title>{t('title')}</Title>
+        <Description>{t('description')}</Description>
+        <Meta>
+          <StyledParticipantCount count={participantCount} />
+          <JoinButton onClick={onJoin}>{t('join')}</JoinButton>
+        </Meta>
+      </Content>
     </Container>
   );
 }

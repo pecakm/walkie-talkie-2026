@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  position: sticky;
-  top: 0.75rem;
-  z-index: 20;
+  position: relative;
   width: min(44rem, calc(100% - 1.5rem));
-  margin: 0.75rem auto 0;
+  margin: 0 auto;
   padding: 0.78rem 1rem;
   border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 1rem;
