@@ -1,5 +1,10 @@
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter';
+import { ThemeProvider } from '@mui/material/styles';
+
+import { StyledComponentsRegistry } from '@/lib/styled-components';
+import { theme } from '@/lib/mui';
 
 import './global.css';
 
@@ -20,7 +25,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={geist.className}>
-      <body>{children}</body>
+      <body>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <StyledComponentsRegistry>
+              {children}
+            </StyledComponentsRegistry>
+          </ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
