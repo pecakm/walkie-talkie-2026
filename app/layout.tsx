@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 
+import { ServiceWorkerRegister } from '@/lib/service-worker';
 import { StyledComponentsRegistry } from '@/lib/styled-components';
 import { theme } from '@/lib/mui';
 import { Navbar } from '@/components';
@@ -32,6 +33,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={geist.className}>
       <body>
+        <ServiceWorkerRegister />
         <NextIntlClientProvider>
           <AppRouterCacheProvider>
             <ThemeProvider theme={theme}>
