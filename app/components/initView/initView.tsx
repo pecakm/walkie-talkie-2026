@@ -25,7 +25,8 @@ export default function InitView({ onJoin }: InitViewProps) {
       <Content>
         <Eyebrow>{t('eyebrow')}</Eyebrow>
         <Title>{t('title')}</Title>
-        <Description>{t('description')}</Description>
+        <Description>{t('description1')}</Description>
+        <Description>{t('description2')}</Description>
         <Meta>
           <StyledParticipantCount count={participantCount} />
           <JoinButton onClick={onJoin}>{t('join')}</JoinButton>

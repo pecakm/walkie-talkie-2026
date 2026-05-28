@@ -9,7 +9,8 @@
     "initView": {
       "eyebrow": "Instant voice chat",
       "title": "Jump into the room and start talking!",
-      "description": "WalkieTalkie gives you a fast, low-friction voice room for spontaneous conversations. Tap Join, jump in, and connect with everyone already inside!",
+      "description1": "WalkieTalkie gives you a fast, low-friction voice room for spontaneous conversations. Tap Join, jump in, and connect with everyone already inside!",
+      "description2": "You can also add the app to your Home Screen on your mobile device!",
       "join": "Join"
     },
     "roomView": {
