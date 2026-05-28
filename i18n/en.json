@@ -8,14 +8,15 @@
   "homePage": {
     "initView": {
       "eyebrow": "Instant voice chat",
-      "title": "Jump into the room and start talking in seconds.",
-      "description": "WalkieTalkie gives you a fast, low-friction voice room for quick syncs, standups, and spontaneous conversations. Tap Join, jump in, and connect with everyone already inside.",
+      "title": "Jump into the room and start talking!",
+      "description": "WalkieTalkie gives you a fast, low-friction voice room for spontaneous conversations. Tap Join, jump in, and connect with everyone already inside!",
       "join": "Join"
     },
     "roomView": {
       "leave": "Leave Room",
       "holdToTalk": "Hold to Talk",
-      "speaking": "Speaking"
+      "speaking": "Speaking",
+      "disabled": "Someone is speaking..."
     }
   }
 }

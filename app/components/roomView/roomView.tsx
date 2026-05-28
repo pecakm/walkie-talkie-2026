@@ -8,7 +8,7 @@ import { Button, ParticipantCount } from '@/components';
 
 import { isSomeoneUnmuted } from './roomView.utils';
 import { RoomViewProps } from './roomView.types';
-import { Container, Header, PushToTalkButton } from './roomView.styled';
+import { Container, Header, LeaveText, PushToTalkButton } from './roomView.styled';
 
 export default function RoomView({ onLeave }: RoomViewProps) {
   const t = useTranslations('homePage.roomView');
@@ -49,7 +49,9 @@ export default function RoomView({ onLeave }: RoomViewProps) {
     <Container>
       <Header>
         <ParticipantCount count={participants.length} />
-        <Button onClick={onLeave}>{t('leave')}</Button>
+        <Button onClick={onLeave}>
+          <LeaveText>{t('leave')}</LeaveText>
+        </Button>
       </Header>
       <PushToTalkButton
         onMouseDown={startTalking}
@@ -60,7 +62,7 @@ export default function RoomView({ onLeave }: RoomViewProps) {
         data-speaking={speaking}
         disabled={isSomeoneSpeaking}
       >
-        {speaking ? t('speaking') : t('holdToTalk')}
+        {speaking ? t('speaking') : isSomeoneSpeaking ? t('disabled') : t('holdToTalk')}
       </PushToTalkButton>
     </Container>
   );

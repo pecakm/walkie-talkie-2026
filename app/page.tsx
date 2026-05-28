@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { LiveKitRoom, RoomAudioRenderer } from '@livekit/components-react';
+import { RoomAudioRenderer } from '@livekit/components-react';
 
 import { InitView, RoomView } from './components';
-import { Container } from './page.styled';
+import { Container, StyledLiveKitRoom } from './page.styled';
 
 export default function HomePage() {
   const [token, setToken] = useState<string | null>(null);
@@ -23,7 +23,7 @@ export default function HomePage() {
   return (
     <Container>
       {token ? (
-        <LiveKitRoom
+        <StyledLiveKitRoom
           token={token}
           serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_URL}
           connect={true}
@@ -32,7 +32,7 @@ export default function HomePage() {
         >
           <RoomAudioRenderer />
           <RoomView onLeave={leaveRoom} />
-        </LiveKitRoom>
+        </StyledLiveKitRoom>
       ) : (
         <InitView onJoin={joinRoom} />
       )}

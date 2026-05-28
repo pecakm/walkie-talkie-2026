@@ -27,6 +27,10 @@ export const Header = styled.div`
   flex-wrap: wrap;
 `;
 
+export const LeaveText = styled.span`
+  color: #ef4444;
+`;
+
 export const PushToTalkButton = styled.button`
   position: relative;
   overflow: hidden;
@@ -60,7 +64,7 @@ export const PushToTalkButton = styled.button`
     content: '';
     position: absolute;
     inset: -40%;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.38), transparent 46%);
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.38), transparent 38%);
     transform: translateX(-35%);
     transition: transform 220ms ease;
   }
