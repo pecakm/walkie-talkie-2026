@@ -18,7 +18,7 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: 'Walkie Talkie',
+  title: 'WalkieTalkie',
   description: 'A simple walkie talkie app created by Mikolaj Pecak',
 };
 
